@@ -1,30 +1,26 @@
-# Question 1
-def format_number(number, representation):
-    return format(number, representation)
+import requests
+from bs4 import BeautifulSoup
 
-result = format_number(145, 'o')
-print(result)
+url = "https://books.toscrape.com/"
 
+response = requests.get(url)
 
-# Question 2
-radius = 84
-pi = 3.14
+if response.status_code == 200:
+    print("Website accessed successfully!\n")
 
-area = pi * radius * radius
-print("Area of pond:", area)
+    soup = BeautifulSoup(response.text, "html.parser")
 
-water_per_square_meter = 1.4
-total_water = area * water_per_square_meter
+    books = soup.find_all("article", class_="product_pod")
 
-print("Total water:", total_water)
+    print("Books found:\n")
 
+    for book in books:
+        title = book.h3.a["title"]
+        price = book.find("p", class_="price_color").text.strip()
+        print("Title:", title)
+        print("Price:", price)
+        print("-" * 40)
 
-# Question 3
-distance = 490
-time_minutes = 7
-
-time_seconds = time_minutes * 60
-
-speed = distance / time_seconds
-
-print("Speed:", speed, "m/s")
+else:
+    print("Failed to access the website.")
+    print("Status code:", response.status_code)
