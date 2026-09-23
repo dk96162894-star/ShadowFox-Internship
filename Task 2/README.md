@@ -1,29 +1,35 @@
-# ShadowFox Internship - Task 2
+ # Task 2 - Intermediate Level
 
-## Topic: Numbers
+## Tasks Completed
 
-This task contains Python programs based on numbers and mathematical calculations.
+### 1. Web Scraper
+A web scraper was created using Python, Requests, and BeautifulSoup.
 
-## Questions Covered
+It extracts:
+- Book titles
+- Book prices
 
-### Question 1
-Convert the number 145 into octal representation using the `format()` function.
+Website used:
+https://books.toscrape.com/
 
-### Question 2
-Calculate the area of a circular pond with a radius of 84 meters and calculate the amount of water required.
+### 2. Hangman Game
+A Hangman word-guessing game was implemented using Python.
 
-### Question 3
-Calculate the speed of a train that covers 490 meters in 7 minutes.
+Features:
+- Random word selection
+- Hints
+- Letter guessing
+- Wrong guess counter
+- Visual Hangman progress
+- Win/Loss condition
 
-## Language Used
+## Technologies Used
 
-Python 3
+- Python 3
+- Requests
+- BeautifulSoup4
 
-## File
+## Files
 
-- `numbers.py` - Contains the solutions for all three questions.
-
-## How to Run
-
-```bash
-python numbers.py
+- `web_scraper.py` - Web scraping program
+- `hangman.py` - Hangman game
